@@ -1,0 +1,67 @@
+<ion-content>
+  <div class="content">
+    <div class="loginhead">
+      <div class="logo-card">
+        <img src="../../assets/icon/crm.png" alt="..." />
+      </div>
+      <h1 class="text-center" style="margin-top: 1em;" >Connexion</h1>
+    </div>
+    <form [formGroup]="formulaire" (ngSubmit)="login_in()">
+      <div style="margin-top: 2em;">
+        <span class=" w-12 p-input-icon-left">
+          <i class="pi pi-user"></i>
+          <input
+            class="w-12"
+            type="email"
+            pInputText
+            formControlName="mail"
+            placeholder="Adresse mail"
+            required
+          />
+        </span>
+        <div class="text-danger" *ngIf="formulaire.get('mail')!.hasError('required') && formulaire.get('mail')!.touched ">
+          <span class="erroMessage">Champ requis.</span>
+        </div>
+        <div class="text-danger" *ngIf="formulaire.get('mail')!.hasError('pattern') && formulaire.get('mail')!.touched">
+          <span class="erroMessage">Mauvais format.</span> 
+        </div>
+      </div>
+      <div style="margin-top: 1em;">
+        <span class=" w-12 p-input-icon-left">
+          <i class="pi pi-lock"></i>
+          <input
+            class="w-12"
+            type="password"
+            pInputText
+            formControlName="password"
+            placeholder="Mot de passe"
+            required
+          />
+        </span>
+      </div>
+      <div *ngIf="formulaire.get('password')!.hasError('required') && formulaire.get('password')!.touched" class="text-danger">
+        <span class="erroMessage">Champ requis.</span>
+      </div>
+      <div *ngIf="formulaire.get('password')!.hasError('minlength') && formulaire.get('password')!.touched" class="text-danger">
+        <span class="erroMessage">Entrez au moins 6 caractères.</span>
+      </div>
+      <div *ngIf="formulaire.get('password')!.hasError('invalidPassword') && formulaire.get('password')!.touched" class="text-danger">
+        <span class="erroMessage">Au moins une majuscule, un caractère spécial et un nombre sont requis.</span> 
+      </div>
+      <a href="#">Mot de passe oublié ?</a>
+
+      <div class="card-button" style="margin-top: 1.5em;" >
+        <button
+          type="submit"
+          class="btn btn-primary"
+          style="background: #231942"
+          label="Submit"
+          icon="pi pi-check"
+          [disabled]="!formulaire.valid"
+        >
+          Connectez vous
+        </button>
+      </div>
+    </form>
+  </div>
+</ion-content>

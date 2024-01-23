@@ -1,0 +1,98 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-button slot="start" fill="transparent"  (click)="back()">
+      <ion-icon color="light" name="arrow-back"></ion-icon>
+    </ion-button>
+    <ion-label>
+      <div
+        class="text-center"
+        style="color: rgba(240, 248, 255, 0.777); font-size: 1.5em"
+      >
+        Notifications
+      </div>
+    </ion-label>
+
+    <!-- petite tricherie centrer le titre de ma page-->
+    <ion-button  slot="end" fill="transparent">
+      <ion-icon
+        style="background: transparent; color: transparent"
+        name="arrow-back"
+      ></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="">
+    <div class="flex flex-nowrap text-center pt-4 justify-content-around tab" style="padding-top: 1.5em;">
+      <div class="w-12 text-lg pb-2 nonvu" (click)="toggleTab('nonvu')" [class.active-tab]="activeTab === 'nonvu'">
+        <ion-icon class="pr-2" name="eye-off"></ion-icon>Non vu
+      </div>
+      <div class="w-12 text-lg pb-2 vu"  (click)="toggleTab('vu')" [class.active-tab]="activeTab === 'vu'">
+        <ion-icon class="pr-2" name="eye"></ion-icon>Déjà vu
+      </div>
+    </div>
+    <div style="height: 15px"></div>
+    <!-- Contenu des notifications -->
+    <div class="notification-content">
+      <div *ngIf="activeTab === 'nonvu'" class="notification-tab-content fade-in">
+        <ion-list class="pt-2" id="nonvu">
+          <ion-item-sliding>
+            <ion-item  class="fadein" lines="none" style="background: white" routerLink = "/notifdetail" >
+              <div style="display: flex">
+                <ion-avatar style="width: 40px; height: 40px">
+                  <img src="../../assets/avatar.jpg" alt="" />
+                </ion-avatar>
+                <div style="padding-left: 10px">
+                  <ion-label style="font-weight: 600">Mega Man X</ion-label>
+                  <div class="flex flex-row">
+                    <ion-icon class="text-sm" name="time-outline"></ion-icon>
+                    <p class="pl-1" style="font-size: 10px; color: rgb(86, 86, 86)">
+                      12:18
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </ion-item>
+            <ion-item-options>
+              <ion-item-option color="danger"
+                ><ion-icon name="trash"></ion-icon
+              ></ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-list>
+      </div>
+      <div *ngIf="activeTab === 'vu'" class="notification-tab-content fade-in">
+        <ion-list  class="pt-2" id="vu">
+          <ion-item-sliding>
+            <ion-item  class="fadein"  lines="none" style="background: white" routerLink = "/notifdetail">
+              <div style="display: flex">
+                <ion-avatar style="width: 40px; height: 40px">
+                  <img src="../../assets/avatar.jpg" alt="" />
+                </ion-avatar>
+                <div style="padding-left: 10px">
+                  <ion-label style="font-weight: 600">Mega Man yessssss </ion-label>
+                  <div class="flex flex-row">
+                    <ion-icon class="text-sm" name="time-outline"></ion-icon>
+                    <p class="pl-1" style="font-size: 10px; color: rgb(86, 86, 86)">
+                      12:18
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </ion-item>
+            <ion-item-options>
+              <ion-item-option color="danger"
+                ><ion-icon name="trash"></ion-icon
+              ></ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-list>
+      </div>
+    </div>
+  </div>
+
+
+
+</ion-content>

@@ -1,0 +1,103 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-button slot="start" fill="transparent" (click)="back()">
+      <ion-icon color="light" name="arrow-back"></ion-icon>
+    </ion-button>
+    <ion-label>
+      <div
+        class="text-center"
+        style="color: rgba(240, 248, 255, 0.777); font-size: 1.5em"
+      >
+        Tâches
+      </div>
+    </ion-label>
+
+    <!-- petite tricherie centrer le titre de ma page-->
+    <ion-button slot="end" fill="transparent">
+      <ion-icon
+        style="background: transparent; color: transparent"
+        name="arrow-back"
+      ></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="background-color:#231942 ; padding: 0 1.5em;">
+    <ion-item style="--background: #ffffff88;" slot="end" lines="none"  fill="outline" shape="round" class="filter container">
+      <ion-select style="border-radius: 20px;" aria-label="Favorite Fruit" [value]="filter">
+        <ion-select-option value="all">Toutes les tâches</ion-select-option>
+        <ion-select-option value="termine">Terminées</ion-select-option>
+        <ion-select-option value="expired">Exprirées</ion-select-option>
+        <ion-select-option value="programme">Programmées </ion-select-option>
+      </ion-select>
+    </ion-item>
+  </div>
+  <ion-list class="pt-4" id="nonvu">
+    <ion-item
+      class="fadein"
+      lines="none"
+      style="background: white"
+      routerLink="/tache-details"
+    >
+      <div style="display: flex" class="d-flex">
+        <ion-avatar style="width: 40px; height: 40px">
+          <img src="../../assets/icon/taskred.png" alt="" />
+        </ion-avatar>
+        <div style="padding-left: 10px">
+          <ion-label style="font-weight: 600">Contacter Lilian</ion-label>
+          <div class="flex flex-row">
+            <ion-icon class="text-sm" name="time-outline"></ion-icon>
+            <p class="pl-1" style="font-size: 10px; color: rgb(86, 86, 86)">
+              12:18
+            </p>
+          </div>
+        </div>
+      </div>
+    </ion-item>
+
+    <ion-item
+      class="fadein"
+      lines="none"
+      style="background: white"
+      routerLink="/tache-details"
+    >
+      <div style="display: flex" class="d-flex">
+        <ion-avatar style="width: 40px; height: 40px">
+          <img src="../../assets/icon/taskgreen.png" alt="" />
+        </ion-avatar>
+        <div style="padding-left: 10px">
+          <ion-label style="font-weight: 600">Contacter Lilian</ion-label>
+          <div class="flex flex-row">
+            <ion-icon class="text-sm" name="time-outline"></ion-icon>
+            <p class="pl-1" style="font-size: 10px; color: rgb(86, 86, 86)">
+              12:18
+            </p>
+          </div>
+        </div>
+      </div>
+    </ion-item>
+
+    <ion-item
+      class="fadein"
+      lines="none"
+      style="background: white"
+      routerLink="/tache-details"
+    >
+      <div style="display: flex" class="d-flex">
+        <ion-avatar style="width: 40px; height: 40px">
+          <img src="../../assets/icon/task.png" alt="" />
+        </ion-avatar>
+        <div style="padding-left: 10px">
+          <ion-label style="font-weight: 600">Contacter Lilian</ion-label>
+          <div class="flex flex-row">
+            <ion-icon class="text-sm" name="time-outline"></ion-icon>
+            <p class="pl-1" style="font-size: 10px; color: rgb(86, 86, 86)">
+              12:18
+            </p>
+          </div>
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

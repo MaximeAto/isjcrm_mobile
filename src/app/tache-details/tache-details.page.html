@@ -1,0 +1,75 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-button slot="start" fill="transparent" (click)="back()">
+      <ion-icon color="light" name="arrow-back"></ion-icon>
+    </ion-button>
+    <ion-label>
+      <div
+        class="text-center"
+        style="color: rgba(240, 248, 255, 0.777); font-size: 1.5em"
+      >
+        Tache details
+      </div>
+    </ion-label>
+
+    <!-- petite tricherie centrer le titre de ma page-->
+    <ion-button slot="end" fill="transparent">
+      <ion-icon
+        style="background: transparent; color: transparent"
+        name="arrow-back"
+      ></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <ion-item
+      class="fadein"
+      lines="none"
+      style="background: white; padding-top: 20px"
+    >
+      <div style="display: flex" class="d-flex">
+        <ion-avatar style="width: 40px; height: 40px">
+          <img src="../../assets/icon/taskred.png" alt="" />
+        </ion-avatar>
+        <div style="padding-left: 10px">
+          <ion-label style="font-weight: 600">Contacter Lilian</ion-label>
+          <div class="flex flex-row">
+            <ion-icon class="text-sm" name="time-outline"></ion-icon>
+            <p class="pl-1" style="font-size: 10px; color: rgb(86, 86, 86)">
+              12:18
+            </p>
+          </div>
+        </div>
+      </div>
+    </ion-item>
+
+    <ion-list>
+      <ion-item>
+        <ion-label style="font-weight: bold;">Assigné par : <span style="font-weight: 100; font-size: 15px;">NKENG ATO</span></ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label style="font-weight: bold;" >Délai : <span style="font-weight: 100; font-size: 15px;">15:30 AM 15/01/2024</span> </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label style="font-weight: bold;"  >Status : <span style="font-weight: 100; font-size: 15px;">Expiré</span></ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-item style="padding-top: 10px;" id="details" lines="none" class="card">
+      <div>
+        <ion-label style="font-weight: 700;">Details</ion-label>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut quia
+          laborum exercitationem velit a dolorem blanditiis et suscipit ipsum
+          architecto aut maxime, sequi, quam tempore laudantium veniam id
+          nostrum. Minima!
+        </p>
+      </div>
+    </ion-item>
+    <div class="container" *ngIf="task" >
+      <ion-button expand="block" (click)="presentToast('top')">Terminé</ion-button>
+    </div> 
+  </div>
+</ion-content>

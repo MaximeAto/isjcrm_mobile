@@ -1,0 +1,29 @@
+ion-header {
+  padding-top: 5px;
+  padding-bottom: 2px;
+  background: #231942;
+
+  ion-toolbar,
+  ion-item {
+    --background: #231942;
+    background: #231942;
+  }
+
+  ion-toolbar {
+    .notifications {
+      --border-radius: 100px;
+      --background: #231942;
+      width: max-content;
+    }
+  }
+}
+
+ion-content{
+    .filter{
+        padding: 10px;
+        border: none;
+        background:#231942;
+
+    }
+
+}

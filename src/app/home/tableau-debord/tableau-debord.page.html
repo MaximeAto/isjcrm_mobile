@@ -1,0 +1,200 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-menu-button slot="start" fill="transparent" menu="menu">
+      <ion-icon color="light" name="reorder-four-outline"></ion-icon>
+    </ion-menu-button>
+    <ion-label>
+      <div
+        class="text-center"
+        style="color: rgba(240, 248, 255, 0.777); font-size: 1.5em"
+      >
+        Dashboard
+      </div>
+    </ion-label>
+    <ion-button class="notifications" routerLink ="/notifications" slot="end">
+      <ion-icon name="notifications"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+
+  <ion-item lines="none">
+    <ion-avatar>
+      <img src="../../assets/avatar.jpg" alt="" />
+    </ion-avatar>
+    <ion-label>
+      <div style="margin-left: 1em">
+        <p>Bonjour,</p>
+        <h3>Maxime ATO</h3>
+      </div>
+    </ion-label>
+  </ion-item>
+</ion-header>
+
+<ion-content>
+    <ion-item style="cursor: pointer; padding-top: 0.3em;" (click)="taches('programme')" lines="none">
+      <i class="pi pi-check-circle"></i>
+      <ion-label style="font-size: 1em;" >Tâches du jour</ion-label>
+      <ion-badge slot="">03</ion-badge>
+      <i class="pi pi-angle-double-right" style="padding-left: 0.5em; color: black;font-size: 1em;"></i>
+    </ion-item>
+
+    <swiper-container [slidesPerView]="perview" [loop]="true">
+      <swiper-slide>
+        <ion-card>
+          <ion-card-header>
+            <div>
+              <ion-badge id="live"><div style="height: 0.1em; width: 1em"></div></ion-badge
+              ><ion-label style="font-size: 1em;">En cours</ion-label>
+            </div>
+            <ion-card-title style="font-size: 1.7em;" >
+              Faire le notoyage au tour de la picine.
+            </ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content class="truncate-text">
+            <div class="d-flex">
+              <ion-icon name="time-outline"></ion-icon>
+              <ion-label style="font-size: 0.9em;" >12:50 - 15:30</ion-label>
+            </div>
+            <div style="font-size: 1em;" class="d-flex pt-2" routerLink = "/tache-details" >
+              <a href="">Voir plus de details</a>
+              <i
+                class="pi pi-angle-right"
+                style="color: #498bff; padding-left: 15px"
+              ></i>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </swiper-slide>
+      <swiper-slide>
+        <ion-card>
+          <ion-card-header>
+            <div>
+              <ion-badge id="prochain"><div style="height: 0.1em; width: 1em"></div></ion-badge
+              ><ion-label style="font-size: 1em;">Pochaine</ion-label>
+            </div>
+            <ion-card-title style="font-size: 1.7em;">
+              Faire le notoyage
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="truncate-text">
+            <div class="d-flex">
+              <ion-icon name="time-outline"></ion-icon>
+              <ion-label style="font-size: 0.9em;" >12:50 - 15:30</ion-label>
+            </div>
+            <div style="font-size: 1em;" class="d-flex pt-2" routerLink = "/tache-details" >
+              <a href="">Voir plus de details</a>
+              <i
+                class="pi pi-angle-right"
+                style="color: #498bff; padding-left: 15px"
+              ></i>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </swiper-slide>
+      <swiper-slide>
+        <ion-card>
+          <ion-card-header>
+            <div>
+              <ion-badge id="bientot"><div style="height: 0.1em; width: 1em"></div></ion-badge
+              ><ion-label style="font-size: 1em;">Pochaine</ion-label>
+            </div>
+            <ion-card-title style="font-size: 1.7em;">
+              Faire le notoyage au tour de la picine.
+            </ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content class="truncate-text">
+            <div class="d-flex">
+              <ion-icon name="time-outline"></ion-icon>
+              <ion-label style="font-size: 0.9em;" >12:50 - 15:30</ion-label>
+            </div>
+            <div style="font-size: 1em;" class="d-flex pt-2" routerLink = "/tache-details" >
+              <a href="">Voir plus de details</a>
+              <i
+                class="pi pi-angle-right"
+                style="color: #498bff; padding-left: 15px"
+              ></i>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </swiper-slide>
+    </swiper-container>
+
+
+    <ion-item lines="none" style="font-size: 1.7em;">
+      <div class="d-flex">
+        <ion-icon name="stats-chart-outline" color="danger" style="font-size: 0.6em; padding-right: 10px;"></ion-icon>
+        <ion-label style="font-size: 0.6em;" >Candidats Stats</ion-label>
+      </div>
+    </ion-item>
+
+    <div class="stats">
+      <div>
+        <div class="custom-row">
+          <div style="cursor: pointer;"  (click)="candidats('enregistre')" >
+            <ion-card style="background: #231942;" >
+              <ion-card-header>
+                <ion-card-title>Enregistrés</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                04
+              </ion-card-content>
+            </ion-card>
+          </div>
+
+          <div style="cursor: pointer;" (click)="candidats('converti')">
+            <ion-card style="background: #840032;">
+              <ion-card-header>
+                <ion-card-title>Convertis</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                04
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+
+
+    <ion-item lines="none" style="font-size: 1.7em;">
+      <div class="d-flex">
+        <ion-icon name="stats-chart-outline" color="danger" style="font-size: 15px; font-size: 0.6em; padding-right: 10px;"></ion-icon>
+        <ion-label  style="font-size: 0.6em;">Tâches Stats</ion-label>
+      </div>
+    </ion-item>
+
+    <div class="stats">
+      <div>
+        <div class="custom-row">
+          <div style="cursor: pointer;" (click)="taches('termine')" >
+            <ion-card style="background: #450018;">
+              <ion-card-header>
+                <ion-card-title>Effectuées</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                04
+              </ion-card-content>
+            </ion-card>
+          </div>
+
+          <div style="cursor: pointer;" (click)="taches('expired')" >
+            <ion-card style="background: #001845">
+              <ion-card-header>
+                <ion-card-title>Dépassées</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                04
+              </ion-card-content>
+            </ion-card>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+</ion-content>

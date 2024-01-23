@@ -1,0 +1,109 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-button slot="start" fill="transparent" (click)="back()">
+      <ion-icon color="light" name="arrow-back"></ion-icon>
+    </ion-button>
+    <ion-label>
+      <div
+        class="text-center"
+        style="color: rgba(240, 248, 255, 0.777); font-size: 14px"
+      >
+        Modifier
+      </div>
+    </ion-label>
+    <ion-button class="notifications" slot="end">
+      <ion-icon name="share-social"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item lines="none">
+      <h6  class="d-flex" style="font-weight: 500; font-size: 15px;"><ion-icon color="tertiary" name="clipboard-outline" style="padding-right: 10px;"></ion-icon>Formulaire d'enregistrment</h6>
+    </ion-item>
+    <form [formGroup]="formulaire" (ngSubmit)="save()">
+      <div class="card flex justify-content-center">
+        <input
+          type="text"
+          pInputText
+          formControlName="nom"
+          placeholder="Nom du candidat"
+        />
+      </div>
+  
+      <div class="card flex justify-content-center mt-2">
+        <input
+          type="text"
+          pInputText
+          formControlName="prenom"
+          placeholder="Prenom du candidat"
+        />
+      </div>
+  
+      <div class="card flex justify-content-center mt-2">
+        <input
+          type="tel"
+          pInputText
+          formControlName="telephone_candidat"
+          placeholder="Numéro de téléphone"
+        />
+      </div>
+  
+      <div class="card flex justify-content-center mt-2">
+        <input
+          type="text"
+          pInputText
+          formControlName="classe"
+          placeholder="La classe"
+        />
+      </div>
+  
+      <div class="card flex justify-content-center mt-2">
+        <input
+          type="tel"
+          pInputText
+          formControlName="telephone_parent"
+          placeholder="Numéro parent"
+        />
+      </div>
+  
+      <div class="card flex justify-content-center mt-2">
+        <input
+          type="text"
+          pInputText
+          formControlName="etablissement"
+          placeholder="Etablissement"
+        />
+      </div>
+  
+      <select class="form-select mt-2" aria-label="Default select example">
+        <option selected>Numéro de choix</option>
+        <option value="1">01</option>
+        <option value="2">02</option>
+        <option value="3">03</option>
+      </select>
+  
+      <div class="card-button mt-3 mb-3">
+        <button
+          type="submit"
+          class="btn btn-primary"
+          style="background: #231942"
+          label="Submit"
+          icon="pi pi-check"
+          [disabled]="!formulaire.valid"
+        >
+          Valider
+        </button>
+      </div>
+    </form>
+  
+    <!-- <ion-item lines="none">
+      <ion-select placeholder="Sélectionnez une filière">
+        <ion-select-option value="choix1">Choix de filière</ion-select-option>
+        <ion-select-option value="choix1">1er_Choix</ion-select-option>
+        <ion-select-option value="choix2">2nd_Choix</ion-select-option>
+        <ion-select-option value="choix3">3ème_Choix</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-button expand="block" shape="round" color="primary">Valider</ion-button> -->
+</ion-content>

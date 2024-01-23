@@ -1,0 +1,56 @@
+ion-header {
+  padding-top: 5px;
+  padding-bottom: 2px;
+  background: #231942;
+
+  ion-toolbar,
+  ion-item {
+    --background: #231942;
+    background: #231942;
+  }
+
+  ion-toolbar {
+    .notifications {
+      --border-radius: 100px;
+      --background: #231942;
+      width: max-content;
+    }
+  }
+}
+
+ion-content {
+
+  .content{
+    padding: 1em 1.3em;
+  }
+
+  ion-item {
+    --background: transparent;
+    width: 100%;
+  }
+}
+
+form {
+  margin: 10px 13px;
+  input {
+    height: 3.5em;
+    background: rgba(243, 242, 242, 0.474);
+    box-shadow: none !important;
+  }
+  select {
+    height: 3.5em;
+    background: rgba(243, 242, 242, 0.474);
+    border: #a2a9b4 solid 1.5px;
+    box-shadow: none !important;
+    color: #6b7490;
+  }
+  button {
+    width: 100%;
+    height: 2.5em;
+    font-size: 1.3em
+  }
+}
+
+.erroMessage {
+  font-size: 0.8rem;
+}

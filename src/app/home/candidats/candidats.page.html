@@ -1,0 +1,538 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-menu-button slot="start" fill="transparent" menu="menu">
+      <ion-icon color="light" name="reorder-four-outline"></ion-icon>
+    </ion-menu-button>
+    <ion-label>
+      <div
+        class="text-center"
+        style="color: rgba(240, 248, 255, 0.777);  font-size: 1.5em"
+      >
+        Candidats
+      </div>
+    </ion-label>
+    <ion-button class="notifications" routerLink="/notifications" slot="end">
+      <ion-icon name="notifications"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+  <div class="mt-2" style="margin: 0 15px">
+    <ion-searchbar
+      show-cancel-button="never"
+      placeholder="Recherche"
+    ></ion-searchbar>
+  </div>
+</ion-header>
+
+<ion-fab slot="fixed" horizontal="end" vertical="bottom">
+  <ion-fab-button style="--background: #231942">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="top">
+    <ion-fab-button color="tertiary" routerLink="/home/ajouter-candidat">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button color="danger">
+      <i class="pi pi-file-export"></i>
+    </ion-fab-button>
+  </ion-fab-list>
+</ion-fab>
+
+<ion-content>
+  <div class="flex flex-nowrap text-center  justify-content-around tab" style="padding-top: 1.5em;">
+    <div class="w-12 text-lg pb-2 enregistre" (click)="toggleTab('enregistre')" [class.active-tab]="activeTab === 'enregistre'">
+      <ion-icon class="pr-2" name="save"></ion-icon>Enregistrés
+    </div>
+    <div class="w-12 text-lg pb-2 converti"  (click)="toggleTab('converti')" [class.active-tab]="activeTab === 'converti'">
+      <ion-icon class="pr-2"  name="swap-horizontal"></ion-icon>Convertis
+    </div>
+  </div>
+  <div style="height: 15px"></div>
+  <ion-list class="fadein" *ngIf="activeTab === 'enregistre'">
+    <ion-item-sliding>
+      <ion-item
+        lines="none"
+        style="background: white"
+        routerLink="/candidat-details"
+      >
+        <div style="display: flex">
+          <ion-avatar style="width: 40px; height: 40px">
+            <img src="../../assets/avatar.jpg" alt="" />
+          </ion-avatar>
+          <div style="padding-left: 10px">
+            <ion-label style="font-weight: 600">Mega Man X</ion-label>
+            <p style="font-size: 10px; color: rgb(86, 86, 86)">
+              Institut Polyvalent Wague
+            </p>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item-options>
+        <ion-item-option color="danger" id="open-modal" expand="block"
+          ><ion-icon name="trash"></ion-icon
+        ></ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item
+        lines="none"
+        style="background: white"
+        routerLink="/candidat-details"
+      >
+        <div style="display: flex">
+          <ion-avatar style="width: 40px; height: 40px">
+            <img src="../../assets/avatar.jpg" alt="" />
+          </ion-avatar>
+          <div style="padding-left: 10px">
+            <ion-label style="font-weight: 600">Mega Man X</ion-label>
+            <p style="font-size: 10px; color: rgb(86, 86, 86)">
+              Institut Polyvalent Wague
+            </p>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item-options>
+        <ion-item-option color="danger" id="open-modal" expand="block"
+          ><ion-icon name="trash"></ion-icon
+        ></ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item
+        lines="none"
+        style="background: white"
+        routerLink="/candidat-details"
+      >
+        <div style="display: flex">
+          <ion-avatar style="width: 40px; height: 40px">
+            <img src="../../assets/avatar.jpg" alt="" />
+          </ion-avatar>
+          <div style="padding-left: 10px">
+            <ion-label style="font-weight: 600">Mega Man X</ion-label>
+            <p style="font-size: 10px; color: rgb(86, 86, 86)">
+              Institut Polyvalent Wague
+            </p>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item-options>
+        <ion-item-option color="danger" id="open-modal" expand="block"
+          ><ion-icon name="trash"></ion-icon
+        ></ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item
+        lines="none"
+        style="background: white"
+        routerLink="/candidat-details"
+      >
+        <div style="display: flex">
+          <ion-avatar style="width: 40px; height: 40px">
+            <img src="../../assets/avatar.jpg" alt="" />
+          </ion-avatar>
+          <div style="padding-left: 10px">
+            <ion-label style="font-weight: 600">Mega Man X</ion-label>
+            <p style="font-size: 10px; color: rgb(86, 86, 86)">
+              Institut Polyvalent Wague
+            </p>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item-options>
+        <ion-item-option color="danger" id="open-modal" expand="block"
+          ><ion-icon name="trash"></ion-icon
+        ></ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item
+        lines="none"
+        style="background: white"
+        routerLink="/candidat-details"
+      >
+        <div style="display: flex">
+          <ion-avatar style="width: 40px; height: 40px">
+            <img src="../../assets/avatar.jpg" alt="" />
+          </ion-avatar>
+          <div style="padding-left: 10px">
+            <ion-label style="font-weight: 600">Mega Man X</ion-label>
+            <p style="font-size: 10px; color: rgb(86, 86, 86)">
+              Institut Polyvalent Wague
+            </p>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item-options>
+        <ion-item-option color="danger" id="open-modal" expand="block"
+          ><ion-icon name="trash"></ion-icon
+        ></ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item
+        lines="none"
+        style="background: white"
+        routerLink="/candidat-details"
+      >
+        <div style="display: flex">
+          <ion-avatar style="width: 40px; height: 40px">
+            <img src="../../assets/avatar.jpg" alt="" />
+          </ion-avatar>
+          <div style="padding-left: 10px">
+            <ion-label style="font-weight: 600">Mega Man X Man Oik </ion-label>
+            <p style="font-size: 10px; color: rgb(86, 86, 86)">
+              Institut Polyvalent Wague
+            </p>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item-options>
+        <ion-item-option color="danger" id="open-modal" expand="block"
+          ><ion-icon name="trash"></ion-icon
+        ></ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item
+        lines="none"
+        style="background: white"
+        routerLink="/candidat-details"
+      >
+        <div style="display: flex">
+          <ion-avatar style="width: 40px; height: 40px">
+            <img src="../../assets/avatar.jpg" alt="" />
+          </ion-avatar>
+          <div style="padding-left: 10px">
+            <ion-label style="font-weight: 600">Mega Man X Man Oik </ion-label>
+            <p style="font-size: 10px; color: rgb(86, 86, 86)">
+              Institut Polyvalent Wague
+            </p>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item-options>
+        <ion-item-option color="danger" id="open-modal" expand="block"
+          ><ion-icon name="trash"></ion-icon
+        ></ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item
+        lines="none"
+        style="background: white"
+        routerLink="/candidat-details"
+      >
+        <div style="display: flex">
+          <ion-avatar style="width: 40px; height: 40px">
+            <img src="../../assets/avatar.jpg" alt="" />
+          </ion-avatar>
+          <div style="padding-left: 10px">
+            <ion-label style="font-weight: 600">Mega Man X Man Oik </ion-label>
+            <p style="font-size: 10px; color: rgb(86, 86, 86)">
+              Institut Polyvalent Wague
+            </p>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item-options>
+        <ion-item-option color="danger" id="open-modal" expand="block"
+          ><ion-icon name="trash"></ion-icon
+        ></ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item
+        lines="none"
+        style="background: white"
+        routerLink="/candidat-details"
+      >
+        <div style="display: flex">
+          <ion-avatar style="width: 40px; height: 40px">
+            <img src="../../assets/avatar.jpg" alt="" />
+          </ion-avatar>
+          <div style="padding-left: 10px ; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+            <ion-label style="font-weight: 600">Mega Man X Man Oik </ion-label>
+            <p style="font-size: 10px; color: rgb(86, 86, 86)">
+              Institut Polyvalent Wague
+            </p>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item-options>
+        <ion-item-option color="danger" id="open-modal" expand="block"
+          ><ion-icon name="trash"></ion-icon
+        ></ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-list class="fadein" *ngIf="activeTab === 'converti'">
+    <ion-item-sliding>
+      <ion-item
+        lines="none"
+        style="background: white"
+        routerLink="/candidat-details"
+      >
+        <div style="display: flex">
+          <ion-avatar style="width: 40px; height: 40px">
+            <img src="../../assets/avatar.jpg" alt="" />
+          </ion-avatar>
+          <div style="padding-left: 10px">
+            <ion-label style="font-weight: 600">Mega Man Xdd</ion-label>
+            <p style="font-size: 10px; color: rgb(86, 86, 86)">
+              Institut Polyvalent Wague
+            </p>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item-options>
+        <ion-item-option color="danger" id="open-modal" expand="block"
+          ><ion-icon name="trash"></ion-icon
+        ></ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item
+        lines="none"
+        style="background: white"
+        routerLink="/candidat-details"
+      >
+        <div style="display: flex">
+          <ion-avatar style="width: 40px; height: 40px">
+            <img src="../../assets/avatar.jpg" alt="" />
+          </ion-avatar>
+          <div style="padding-left: 10px">
+            <ion-label style="font-weight: 600">Mega Man X</ion-label>
+            <p style="font-size: 10px; color: rgb(86, 86, 86)">
+              Institut Polyvalent Wague
+            </p>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item-options>
+        <ion-item-option color="danger" id="open-modal" expand="block"
+          ><ion-icon name="trash"></ion-icon
+        ></ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item
+        lines="none"
+        style="background: white"
+        routerLink="/candidat-details"
+      >
+        <div style="display: flex">
+          <ion-avatar style="width: 40px; height: 40px">
+            <img src="../../assets/avatar.jpg" alt="" />
+          </ion-avatar>
+          <div style="padding-left: 10px">
+            <ion-label style="font-weight: 600">Mega Man X</ion-label>
+            <p style="font-size: 10px; color: rgb(86, 86, 86)">
+              Institut Polyvalent Wague
+            </p>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item-options>
+        <ion-item-option color="danger" id="open-modal" expand="block"
+          ><ion-icon name="trash"></ion-icon
+        ></ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item
+        lines="none"
+        style="background: white"
+        routerLink="/candidat-details"
+      >
+        <div style="display: flex">
+          <ion-avatar style="width: 40px; height: 40px">
+            <img src="../../assets/avatar.jpg" alt="" />
+          </ion-avatar>
+          <div style="padding-left: 10px">
+            <ion-label style="font-weight: 600">Mega Man X</ion-label>
+            <p style="font-size: 10px; color: rgb(86, 86, 86)">
+              Institut Polyvalent Wague
+            </p>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item-options>
+        <ion-item-option color="danger" id="open-modal" expand="block"
+          ><ion-icon name="trash"></ion-icon
+        ></ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item
+        lines="none"
+        style="background: white"
+        routerLink="/candidat-details"
+      >
+        <div style="display: flex">
+          <ion-avatar style="width: 40px; height: 40px">
+            <img src="../../assets/avatar.jpg" alt="" />
+          </ion-avatar>
+          <div style="padding-left: 10px">
+            <ion-label style="font-weight: 600">Mega Man X</ion-label>
+            <p style="font-size: 10px; color: rgb(86, 86, 86)">
+              Institut Polyvalent Wague
+            </p>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item-options>
+        <ion-item-option color="danger" id="open-modal" expand="block"
+          ><ion-icon name="trash"></ion-icon
+        ></ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item
+        lines="none"
+        style="background: white"
+        routerLink="/candidat-details"
+      >
+        <div style="display: flex">
+          <ion-avatar style="width: 40px; height: 40px">
+            <img src="../../assets/avatar.jpg" alt="" />
+          </ion-avatar>
+          <div style="padding-left: 10px">
+            <ion-label style="font-weight: 600">Mega Man X Man Oik </ion-label>
+            <p style="font-size: 10px; color: rgb(86, 86, 86)">
+              Institut Polyvalent Wague
+            </p>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item-options>
+        <ion-item-option color="danger" id="open-modal" expand="block"
+          ><ion-icon name="trash"></ion-icon
+        ></ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item
+        lines="none"
+        style="background: white"
+        routerLink="/candidat-details"
+      >
+        <div style="display: flex">
+          <ion-avatar style="width: 40px; height: 40px">
+            <img src="../../assets/avatar.jpg" alt="" />
+          </ion-avatar>
+          <div style="padding-left: 10px">
+            <ion-label style="font-weight: 600">Mega Man X Man Oik </ion-label>
+            <p style="font-size: 10px; color: rgb(86, 86, 86)">
+              Institut Polyvalent Wague
+            </p>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item-options>
+        <ion-item-option color="danger" id="open-modal" expand="block"
+          ><ion-icon name="trash"></ion-icon
+        ></ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item
+        lines="none"
+        style="background: white"
+        routerLink="/candidat-details"
+      >
+        <div style="display: flex">
+          <ion-avatar style="width: 40px; height: 40px">
+            <img src="../../assets/avatar.jpg" alt="" />
+          </ion-avatar>
+          <div style="padding-left: 10px">
+            <ion-label style="font-weight: 600">Mega Man X Man Oik </ion-label>
+            <p style="font-size: 10px; color: rgb(86, 86, 86)">
+              Institut Polyvalent Wague
+            </p>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item-options>
+        <ion-item-option color="danger" id="open-modal" expand="block"
+          ><ion-icon name="trash"></ion-icon
+        ></ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item
+        lines="none"
+        style="background: white"
+        routerLink="/candidat-details"
+      >
+        <div style="display: flex">
+          <ion-avatar style="width: 40px; height: 40px">
+            <img src="../../assets/avatar.jpg" alt="" />
+          </ion-avatar>
+          <div style="padding-left: 10px">
+            <ion-label style="font-weight: 600">Mega Man X Man Oik </ion-label>
+            <p style="font-size: 10px; color: rgb(86, 86, 86)">
+              Institut Polyvalent Wague
+            </p>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item-options>
+        <ion-item-option color="danger" id="open-modal" expand="block"
+          ><ion-icon name="trash"></ion-icon
+        ></ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="cancel()" color="light">Cancel</ion-button>
+          </ion-buttons>
+
+          <ion-buttons slot="end" *ngIf="value" >
+            <ion-button (click)="confirm()" color="primary" [strong]="true"
+              >Confirm</ion-button
+            >
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+
+        <ion-item lines="none">
+          <ion-label>
+            Raison
+          </ion-label>
+          <div class="card flex justify-content-center">
+            <textarea
+              rows="5"
+              placeholder="Entrez la raison de la Suppression"  
+              cols="30"
+              pInputTextarea
+              [(ngModel)]="value"
+            ></textarea>
+          </div>
+        </ion-item>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>

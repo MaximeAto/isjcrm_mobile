@@ -1,0 +1,263 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-button slot="start" fill="transparent" (click)="back()">
+      <ion-icon color="light" name="arrow-back"></ion-icon>
+    </ion-button>
+    <ion-label>
+      <div
+        class="text-center"
+        style="color: rgba(240, 248, 255, 0.777);  font-size: 1.5em"
+      >
+        Details notification
+      </div>
+    </ion-label>
+
+    <!-- petite tricherie centrer le titre de ma page-->
+    <ion-button slot="end" fill="transparent">
+      <ion-icon
+        style="background: transparent; color: transparent"
+        name="arrow-back"
+      ></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="type == 'add'">
+    <ion-item
+      class="fadein pt-2"
+      lines="none"
+      routerLink="/notifdetail"
+    >
+      <div style="display: flex">
+        <ion-avatar style="width: 40px; height: 40px">
+          <img src="../../assets/avatar.jpg" alt="" />
+        </ion-avatar>
+        <div style="padding-left: 10px">
+          <ion-label style="font-weight: 600">Ajout d'un Candidat</ion-label>
+          <div class="flex  flex-row">
+            <p class="pl-1" style="font-size: 10px; color: rgb(86, 86, 86)">
+              <ion-icon  class="text-sm" name="time" style="padding-top: 10px;"></ion-icon>12:18
+            </p>
+          </div>
+        </div>
+      </div>
+    </ion-item>
+
+    <div class="container">
+      Présisément à 12:18 jean a ajouté le candidat ci-dessous.
+    </div>
+
+    <ion-list id="info" >
+      <ion-item lines="none" class="card">
+        <div>
+          <ion-label>Nom(s) :</ion-label>
+          <p>
+            <i
+              class="pi pi-id-card"
+              style="color: rgb(24, 4, 98); padding-right: 8px"
+            ></i
+            >NKENG ATO
+          </p>
+        </div>
+      </ion-item>
+      <ion-item lines="none" class="card">
+        <div>
+          <ion-label>Prenom(s) :</ion-label>
+          <p>
+            <i
+              class="pi pi-id-card"
+              style="color: rgb(24, 4, 98); padding-right: 8px"
+            ></i
+            >Maxime Melaine
+          </p>
+        </div>
+      </ion-item>
+      <ion-item lines="none" class="card">
+        <div>
+          <ion-label>Téléphone :</ion-label>
+          <p>
+            <i
+              class="pi pi-phone"
+              style="color: rgb(24, 4, 98); padding-right: 8px"
+            ></i
+            >+237654837863
+          </p>
+        </div>
+      </ion-item>
+      <ion-item lines="none" class="card">
+        <div>
+          <ion-label>Classe :</ion-label>
+          <p>
+            <i
+              class="pi pi-user"
+              style="color: rgb(24, 4, 98); padding-right: 8px"
+            ></i
+            >kenvksnknkn
+          </p>
+        </div>
+      </ion-item>
+      <ion-item lines="none" class="card">
+        <div>
+          <ion-label>Numéro parent :</ion-label>
+          <p>
+            <i
+              class="pi pi-phone"
+              style="color: rgb(24, 4, 98); padding-right: 8px"
+            ></i
+            >+237674702037
+          </p>
+        </div>
+      </ion-item>
+      <ion-item lines="none" class="card">
+        <div>
+          <ion-label>Etablissement :</ion-label>
+          <p>
+            <i
+              class="pi pi-building"
+              style="color: rgb(24, 4, 98); padding-right: 8px"
+            ></i
+            >Institut Polyvalent Wague
+          </p>
+        </div>
+      </ion-item>
+      <ion-item lines="none" class="card">
+        <div>
+          <ion-label>Numéro de choix :</ion-label>
+          <p>
+            <i
+              class="pi pi-sort"
+              style="color: rgb(24, 4, 98); padding-right: 8px"
+            ></i
+            >03
+          </p>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div *ngIf="type == 'delete'">
+    <ion-item
+      class="fadein pt-2"
+      lines="none"
+      style="background: white"
+      routerLink="/notifdetail"
+    >
+      <div style="display: flex">
+        <ion-avatar style="width: 40px; height: 40px">
+          <img src="../../assets/avatar.jpg" alt="" />
+        </ion-avatar>
+        <div style="padding-left: 10px">
+          <ion-label style="font-weight: 600"
+            >Suppression d'un candidat</ion-label
+          >
+          <div class="flex flex-row">
+            <ion-icon class="text-sm" name="time-outline"></ion-icon>
+            <p class="pl-1" style="font-size: 10px; color: rgb(86, 86, 86)">
+              12:18
+            </p>
+          </div>
+        </div>
+      </div>
+    </ion-item>
+
+    <div class="container">
+      Présisément à 12:18 jean a supprimé le candidat ci-dessous.
+    </div>
+
+    <ion-list>
+      <ion-item lines="none" class="card">
+        <div>
+          <ion-label>Nom(s) :</ion-label>
+          <p>
+            <i
+              class="pi pi-id-card"
+              style="color: rgb(24, 4, 98); padding-right: 8px"
+            ></i
+            >NKENG ATO
+          </p>
+        </div>
+      </ion-item>
+      <ion-item lines="none" class="card">
+        <div>
+          <ion-label>Prenom(s) :</ion-label>
+          <p>
+            <i
+              class="pi pi-id-card"
+              style="color: rgb(24, 4, 98); padding-right: 8px"
+            ></i
+            >Maxime Melaine
+          </p>
+        </div>
+      </ion-item>
+
+      <ion-item lines="none" class="card">
+        <div>
+          <ion-label>Raison</ion-label>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+            architecto quod enim. Aspernatur, distinctio tenetur ad nesciunt
+            nihil non nisi fugiat illum soluta error blanditiis repudiandae?
+            Delectus voluptatum veritatis commodi!
+          </p>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div *ngIf="type == 'conversion'">
+    <ion-item
+      class="fadein pt-2"
+      lines="none"
+      style="background: white"
+      routerLink="/notifdetail"
+    >
+      <div style="display: flex">
+        <ion-avatar style="width: 40px; height: 40px">
+          <img src="../../assets/avatar.jpg" alt="" />
+        </ion-avatar>
+        <div style="padding-left: 10px">
+          <ion-label style="font-weight: 600">Ajout d'un Candidat</ion-label>
+          <div class="flex flex-row">
+            <ion-icon class="text-sm" name="time-outline"></ion-icon>
+            <p class="pl-1" style="font-size: 10px; color: rgb(86, 86, 86)">
+              12:18
+            </p>
+          </div>
+        </div>
+      </div>
+    </ion-item>
+
+    <div class="container">
+      Présisément à 12:18 le candidat ci-dessous a été convertis par Jean.
+    </div>
+
+    <ion-list>
+      <ion-item lines="none" class="card">
+        <div>
+          <ion-label>Nom(s) :</ion-label>
+          <p>
+            <i
+              class="pi pi-id-card"
+              style="color: rgb(24, 4, 98); padding-right: 8px"
+            ></i
+            >NKENG ATO
+          </p>
+        </div>
+      </ion-item>
+      <ion-item lines="none" class="card">
+        <div>
+          <ion-label>Prenom(s) :</ion-label>
+          <p>
+            <i
+              class="pi pi-id-card"
+              style="color: rgb(24, 4, 98); padding-right: 8px"
+            ></i
+            >Maxime Melaine
+          </p>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>
