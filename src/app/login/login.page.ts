@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  Validators,
-  AbstractControl,
-} from '@angular/forms';
+import {FormBuilder,FormGroup,Validators,AbstractControl} from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -14,8 +10,9 @@ import { Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
   formulaire!: FormGroup;
+  erreurLogin = false
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {}
+  constructor(private formBuilder: FormBuilder, private router: Router, private userserv:UserService) {}
 
   ngOnInit() {
     this.formulaire = this.formBuilder.group({
@@ -38,8 +35,22 @@ export class LoginPage implements OnInit {
   }
 
   login_in() {
-    if (!this.formulaire.invalid) {
-      this.router.navigate(['/home/tableau-debord']);
+    if (this.formulaire.valid) {
+      const email = this.formulaire.get('mail')?.value;
+      const password = this.formulaire.get('password')?.value;
+
+      // Utiliser le service UserService pour effectuer l'appel à l'API
+      this.userserv.login(email, password).subscribe(
+        (response) => {
+          console.log('Login successful:', response);
+          localStorage.setItem("user", JSON.stringify(response) )
+          this.router.navigate(['/home/tableau-debord']);
+        },
+        (error) => {
+          console.error('Login error:', error.error.message);
+          this.erreurLogin = true;
+        }
+      );
     }
   }
 

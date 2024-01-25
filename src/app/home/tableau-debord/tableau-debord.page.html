@@ -23,7 +23,7 @@
     <ion-label>
       <div style="margin-left: 1em">
         <p>Bonjour,</p>
-        <h3>Maxime ATO</h3>
+        <h3>{{ user.first_name }}</h3>
       </div>
     </ion-label>
   </ion-item>
@@ -131,13 +131,16 @@
     <div class="stats">
       <div>
         <div class="custom-row">
-          <div style="cursor: pointer;"  (click)="candidats('enregistre')" >
+          <div style="cursor: pointer;"  (click)="candidats('enregistre')">
             <ion-card style="background: #231942;" >
               <ion-card-header>
                 <ion-card-title>Enregistrés</ion-card-title>
               </ion-card-header>
-              <ion-card-content>
-                04
+              <ion-card-content *ngIf="allContacts.length< 10" >
+                0{{allContacts.length}}
+              </ion-card-content>
+              <ion-card-content *ngIf="allContacts.length >= 10" >
+                {{allContacts.length}}
               </ion-card-content>
             </ion-card>
           </div>
@@ -148,7 +151,7 @@
                 <ion-card-title>Convertis</ion-card-title>
               </ion-card-header>
               <ion-card-content>
-                04
+                {{convertis.length}}
               </ion-card-content>
             </ion-card>
           </div>
