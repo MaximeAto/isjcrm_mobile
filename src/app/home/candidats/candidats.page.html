@@ -47,12 +47,12 @@
     </div>
   </div>
   <div style="height: 15px"></div>
-  <ion-list class="fadein" *ngIf="activeTab === 'enregistre'">
-    <ion-item-sliding>
+  <ion-list class="fadein" *ngIf="activeTab === 'enregistre'" >
+    <ion-item-sliding *ngFor="let item of candidats">
       <ion-item
         lines="none"
         style="background: white"
-        routerLink="/candidat-details"
+        routerLink="/candidat-details/:id"
       >
         <div style="display: flex">
           <ion-avatar style="width: 40px; height: 40px">
@@ -61,9 +61,10 @@
           <div style="padding-left: 10px">
             <ion-label style="font-weight: 600">Mega Man X</ion-label>
             <p style="font-size: 10px; color: rgb(86, 86, 86)">
-              Institut Polyvalent Wague
+              {{item.nom}}
             </p>
           </div>
+            
         </div>
       </ion-item>
       <ion-item-options>
@@ -73,7 +74,7 @@
       </ion-item-options>
     </ion-item-sliding>
 
-    <ion-item-sliding>
+    <!-- <ion-item-sliding>
       <ion-item
         lines="none"
         style="background: white"
@@ -221,9 +222,9 @@
           ><ion-icon name="trash"></ion-icon
         ></ion-item-option>
       </ion-item-options>
-    </ion-item-sliding>
+    </ion-item-sliding> -->
 
-    <ion-item-sliding>
+    <!-- <ion-item-sliding>
       <ion-item
         lines="none"
         style="background: white"
@@ -498,7 +499,7 @@
           ><ion-icon name="trash"></ion-icon
         ></ion-item-option>
       </ion-item-options>
-    </ion-item-sliding>
+    </ion-item-sliding> -->
   </ion-list>
 
   <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">

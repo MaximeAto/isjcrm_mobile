@@ -2,6 +2,7 @@ import { Component, OnInit,ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IonModal } from '@ionic/angular';
 import { OverlayEventDetail } from '@ionic/core/components';
+import { CandidatService } from 'src/app/services/candidat.service';
 
 @Component({
   selector: 'app-candidats',
@@ -16,9 +17,13 @@ export class CandidatsPage implements OnInit {
   tertiary = "tertiary"
   activeTab!: string
   status: any;
+
+  candidats:any[]=[];
+  searchTerm: string = '';
+  candidatsFiltres:any[]=[];
   @ViewChild(IonModal) modal!: IonModal;
 
-  constructor(private route: ActivatedRoute) { 
+  constructor(private route: ActivatedRoute, private candidatservice: CandidatService) { 
     this.route.params.subscribe(params => {
       this.status = params['status'];
       this.activeTab = this.status
@@ -26,6 +31,13 @@ export class CandidatsPage implements OnInit {
   }
 
   ngOnInit() {
+    // this.candidats = this.candidatservice.getcandidat();
+    console.log("good");
+    
+  }
+  
+  ionViewDidEnter() {  
+    this.loadcandidats(); 
   }
 
   toggleTab(tabId: string): void {
@@ -50,7 +62,13 @@ export class CandidatsPage implements OnInit {
     }
   }
 
-  delete(){
+  loadcandidats() {
+    this.candidatservice.getcandidat().subscribe((data) => {
+      this.candidats = data;
+      console.log(this.candidats);
 
+    })
   }
+
+
 }

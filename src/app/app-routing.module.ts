@@ -29,7 +29,7 @@ const routes: Routes = [
     loadChildren: () => import('./home/ajouter-candidat/ajouter-candidat.module').then( m => m.AjouterCandidatPageModule)
   },
   {
-    path: 'candidat-details',
+    path: 'candidat-details/:id',
     loadChildren: () => import('./candidat-details/candidat-details.module').then( m => m.CandidatDetailsPageModule)
   },
   {
